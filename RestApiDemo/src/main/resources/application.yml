@@ -1,0 +1,38 @@
+
+spring:
+  profiles:
+    active: qa
+---
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/testdb
+    password: 123Pera123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  config:
+    activate:
+      on-profile: dev
+welcome:
+  message: hello how are you
+
+---
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/testdb-qa
+    password: 123Pera123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  config:
+    activate:
+      on-profile: qa
+welcome:
+  message: hello how are you qa
+
